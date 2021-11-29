@@ -1,7 +1,12 @@
-# nato-phonetic-alphabet
-A simple npm package for that contains the full Nato Phonetic Alphabet (Present "International aviation" variant). 
+# nato-phonetic-alphabet &middot; [![GitHub license](https://img.shields.io/github/license/UltraCakeBakery/nato-phonetic-alphabet.svg?style=flat-square)](#LICENSE) [![npm version](https://img.shields.io/npm/v/nato-phonetic-alphabet.svg?style=flat-square)](https://www.npmjs.com/package/nato-phonetic-alphabet) [![npm](https://img.shields.io/bundlephobia/min/nato-phonetic-alphabet?style=flat-square)]
 
-Examples:
+`
+This tiny (tree shakable) npm package contains the full NATO phonetic alphabet (present "International aviation" variant). 
+It also comes with a handy [`convert()`](#examples) function, that makes it very easy for you to quickly convert strings like `'a b c'` to `'alpha beta charlie'`.
+
+Learn more about [the NATO phonetic alphabet (International Aviation)](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#International_aviation)
+
+## Examples:
 
 ```javascript
 import NatoPhoneticAlphabet from 'nato-phonetic-alphabet'
@@ -24,7 +29,7 @@ console.log( convert( 'abc', 0 ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yank
 console.log( convert( 'abc', 1, '-' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform 
 console.log( convert( 'abc', 2, '' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform 
 
-console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform 
+console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform !
 
 ```
 
@@ -44,3 +49,4 @@ console.log( codeWords.capitalized )
 //   'Yankee',  'Zulu'
 // ]
 ```
+
