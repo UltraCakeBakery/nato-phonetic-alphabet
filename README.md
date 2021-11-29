@@ -5,6 +5,16 @@ It also comes with a handy [`convert()`](#examples) function, that makes it very
 
 Learn more about [the NATO phonetic alphabet (International Aviation)](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#International_aviation)
 
+## How to install
+You can install this package like any other npm package.
+
+```bash
+npm install nato-phonetic-alphabet
+yarn add nato-phonetic-alphabet
+pnpm install nato-phonetic-alphabet
+```
+
+
 ## Examples:
 
 ```javascript
