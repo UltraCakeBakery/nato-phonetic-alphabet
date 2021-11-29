@@ -17,10 +17,17 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.23.3
-      - run: pnpm install
+          run_install: true
       - run: pnpm build
       - run: npm publish
 
@@ -33,10 +40,17 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.23.3
-      - run: pnpm install
+          run_install: true
       - run: pnpm build
       - run: npm publish
         env:
@@ -54,10 +68,17 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.23.3
-      - run: pnpm install
+          run_install: true
       - run: pnpm build
       - run: npm publish
         env:
