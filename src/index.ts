@@ -59,4 +59,20 @@ export function convert( text: string, mode: ConversionMode = ConversionMode.CAP
 	).join( '' )
 }
 
+/** Generates a string that counts up alphabetically using the phonetic alphabet. 
+ * Can be used to generate html element class names, github repository names or anything that needs to look temporary and robust. 
+ * */
+export function placeholder( number: number, divider = '-' ) : string
+{
+	const placeholder = []
+	const major = Math.floor( number / codewords.lowercase.length )
+	const minor = number - codewords.lowercase.length * major
+
+	for ( let index = 0; index < major; index++ ) placeholder.push( codewords.lowercase[ codewords.lowercase.length - 1] )
+
+	placeholder.push( codewords.lowercase[ minor ] )
+
+	return placeholder.join( divider || '-' )
+}
+
 export default alphabet

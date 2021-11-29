@@ -1,7 +1,7 @@
 # nato-phonetic-alphabet &middot; [![GitHub license](https://img.shields.io/github/license/UltraCakeBakery/nato-phonetic-alphabet.svg?style=flat-square)](#LICENSE) [![npm version](https://img.shields.io/npm/v/nato-phonetic-alphabet.svg?style=flat-square)](https://www.npmjs.com/package/nato-phonetic-alphabet) ![npm](https://img.shields.io/bundlephobia/min/nato-phonetic-alphabet?style=flat-square)
 
 This tiny npm package contains the full NATO phonetic alphabet (present "International aviation" variant). 
-It also comes with a handy [`convert()`](#examples) function, that makes it very easy for you to quickly convert strings like `"a b c"` to `"alpha beta charlie"`.
+It also comes with a handy [`convert()`](#examples) and [`placeholder()`]() function.
 
 Learn more about [the NATO phonetic alphabet (International Aviation)](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#International_aviation)
 
@@ -17,6 +17,7 @@ pnpm install nato-phonetic-alphabet
 
 ## Examples:
 
+###### How to use as a dictionary
 ```javascript
 import NatoPhoneticAlphabet from 'nato-phonetic-alphabet'
 
@@ -31,6 +32,7 @@ console.log( NatoPhoneticAlphabet['b'] ) // bravo
 console.log( NatoPhoneticAlphabet['c'] ) // charlie
 ```
 
+###### how to use `convert()`
 ```javascript
 import { convert } from 'nato-phonetic-alphabet'
 
@@ -39,9 +41,34 @@ console.log( convert( 'abc', 1, '-' ) ) // Mike echo  <3 Lima Oscar Victor Echo 
 console.log( convert( 'abc', 2, '' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform 
 
 console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform !
-
 ```
 
+###### how to use `placeholder()`
+```javascript
+import { placeholder } from 'nato-phonetic-alphabet'
+
+console.log( placeholder( 0 ) ) // alpha
+console.log( placeholder( 1 ) ) // beta
+console.log( placeholder( 27 ) ) // alpha
+console.log( placeholder( 100 ) ) // alpha
+console.log( placeholder( 1000 ) ) // alpha
+```
+
+###### Get all letters
+```javascript
+import { letters } from 'nato-phonetic-alphabet'
+
+console.log( letters.uppercase )
+// [
+//     'A', 'B', 'C', 'D', 'E', 'F',
+//     'G', 'H', 'I', 'J', 'K', 'L',
+//     'M', 'N', 'O', 'P', 'Q', 'R',
+//     'S', 'T', 'U', 'V', 'W', 'X',
+//     'Y', 'Z'
+// ]
+```
+
+###### Get all code words
 ```javascript
 import { codeWords } from 'nato-phonetic-alphabet'
 
