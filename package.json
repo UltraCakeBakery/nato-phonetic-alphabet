@@ -33,7 +33,7 @@
     "build": "tsup",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.cjs,.ts .",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
