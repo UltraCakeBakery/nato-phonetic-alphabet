@@ -15,10 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2.0.1
         with:
           node-version: 16
+      - uses: pnpm/action-setup@v2.0.1
       - run: pnpm install
       - run: pnpm build
       - run: npm publish
@@ -29,11 +28,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2.0.1
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - uses: pnpm/action-setup@v2.0.1
       - run: pnpm install
       - run: pnpm build
       - run: npm publish
@@ -49,11 +47,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2.0.1
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+      - uses: pnpm/action-setup@v2.0.1
       - run: pnpm install
       - run: pnpm build
       - run: npm publish
