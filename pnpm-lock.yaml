@@ -10,15 +10,13 @@ specifiers:
   tsup: ^5.10.0
   typescript: ^4.5.2
 
-dependencies:
-  nato-phonetic-alphabet: 1.2.0
-
 devDependencies:
   '@types/node': 16.11.10
   '@typescript-eslint/eslint-plugin': 5.4.0_5c8ff4cecd5a55e744866c0654edac32
   '@typescript-eslint/parser': 5.4.0_eslint@8.3.0+typescript@4.5.2
   eslint: 8.3.0
   eslint-plugin-import: 2.25.3_eslint@8.3.0
+  nato-phonetic-alphabet: 1.2.0
   tsup: 5.10.0_typescript@4.5.2
   typescript: 4.5.2
 
@@ -1272,7 +1270,7 @@ packages:
 
   /nato-phonetic-alphabet/1.2.0:
     resolution: {integrity: sha512-NFIeFYOlQNsbZyenSihQJ8bQi3Mr8hmKktJIrgga0RxnDU6KytzwLAMctTFrIsliFyYNTNEXbjFqcaU/Oqgp0Q==}
-    dev: false
+    dev: true
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
