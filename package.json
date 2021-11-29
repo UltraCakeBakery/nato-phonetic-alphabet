@@ -1,8 +1,17 @@
 {
   "name": "nato-phonetic-alphabet",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "This tiny npm package contains the full NATO phonetic alphabet (present \"International aviation\" variant), a basic string converter and placeholder generator.",
-  "keywords": ["Converter", "NATO", "Alpha", "Beta", "List", "JSON", "aviation", "Alphabet"],
+  "keywords": [
+    "Converter",
+    "NATO",
+    "Alpha",
+    "Beta",
+    "List",
+    "JSON",
+    "aviation",
+    "Alphabet"
+  ],
   "author": "Jack van der Bilt <contact@managing.software> (https://managing.software)",
   "license": "MIT",
   "type": "module",
@@ -13,6 +22,9 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+	  "dist"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,5 +50,8 @@
     "eslint-plugin-import": "^2.25.3",
     "tsup": "^5.10.0",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "nato-phonetic-alphabet": "^1.2.0"
   }
 }
