@@ -1,7 +1,8 @@
 {
   "name": "nato-phonetic-alphabet",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "This tiny npm package contains the full NATO phonetic alphabet (present \"International aviation\" variant) and a basic string converter.",
+  "keywords": ["Converter", "NATO", "Alpha", "Beta", "List", "JSON", "aviation", "Alphabet"],
   "author": "Jack van der Bilt <contact@managing.software> (https://managing.software)",
   "license": "MIT",
   "type": "module",
