@@ -1,0 +1,24 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/CODE_OF_CONDUCT.md": true,
+		"**/LICENSE": true,
+		// ".eslintrc.cjs": true,
+		".gitignore": true,
+	},
+	"files.insertFinalNewline": true,
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"eslint.packageManager": "pnpm",
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+	},
+	"cSpell.words": [
+		
+	]
+}

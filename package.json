@@ -1,0 +1,41 @@
+{
+  "name": "nato-phonetic-alphabet",
+  "version": "1.1.0",
+  "description": "A simple npm package for that contains the full Nato Phonetic Alphabet (Present \"International aviation\" variant).",
+  "author": "Jack van der Bilt <contact@managing.software> (https://managing.software)",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsup --watch src",
+    "build": "tsup",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js,.cjs,.ts ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UltraCakeBakery/nato-phonetic-alphabet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UltraCakeBakery/nato-phonetic-alphabet/issues"
+  },
+  "homepage": "https://github.com/UltraCakeBakery/nato-phonetic-alphabet#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "tsup": "^5.10.0",
+    "typescript": "^4.5.2"
+  }
+}
