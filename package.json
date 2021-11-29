@@ -1,6 +1,6 @@
 {
   "name": "nato-phonetic-alphabet",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "This tiny npm package contains the full NATO phonetic alphabet (present \"International aviation\" variant), a basic string converter and placeholder generator.",
   "keywords": [
     "Converter",
