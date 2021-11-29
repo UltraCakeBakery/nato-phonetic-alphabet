@@ -36,11 +36,16 @@ console.log( NatoPhoneticAlphabet['c'] ) // charlie
 ```javascript
 import { convert } from 'nato-phonetic-alphabet'
 
-console.log( convert( 'abc', 0 ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform 
-console.log( convert( 'abc', 1, '-' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform 
-console.log( convert( 'abc', 2, '' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform 
+console.log( convert( 'a b c d', 0 ) ) // ALFA BRAVO CHARLIE DELTA
+console.log( convert( 'a b c d', 1 ) ) // alfa bravo charlie delta
+console.log( convert( 'A B c d', 2 ) ) // ALFA BRAVO charlie delta
 
-console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Mike echo  <3 Lima Oscar Victor Echo  Yankee Oscar Uniform !
+// Using `divider` option
+console.log( convert( 'abcd', 0, '-' ) ) // alfa-bravo-charlie-delta
+console.log( convert( 'abcd', 1, '-' ) ) // alfa-bravo-charlie-delta
+console.log( convert( 'ABcd', 2, '-' ) ) // ALFA-BRAVO-charlie-delta 
+
+console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Hotel echo lima lima oscar   Whisky oscar romeo lima delta !   India   < 3   yankee oscar uniform !
 ```
 
 ###### how to use `placeholder()`
@@ -49,23 +54,12 @@ import { placeholder } from 'nato-phonetic-alphabet'
 
 console.log( placeholder( 0 ) ) // alpha
 console.log( placeholder( 1 ) ) // beta
-console.log( placeholder( 27 ) ) // alpha
-console.log( placeholder( 100 ) ) // alpha
-console.log( placeholder( 1000 ) ) // alpha
-```
+console.log( placeholder( 26 ) ) // zulu-alpha
+console.log( placeholder( 100 ) ) // zulu-zulu-zulu-whisky
+console.log( placeholder( 1000 ) ) // zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-mike
 
-###### Get all letters
-```javascript
-import { letters } from 'nato-phonetic-alphabet'
-
-console.log( letters.uppercase )
-// [
-//     'A', 'B', 'C', 'D', 'E', 'F',
-//     'G', 'H', 'I', 'J', 'K', 'L',
-//     'M', 'N', 'O', 'P', 'Q', 'R',
-//     'S', 'T', 'U', 'V', 'W', 'X',
-//     'Y', 'Z'
-// ]
+// Using `divider` option
+console.log( placeholder( 100, '_' ) ) // zulu_zulu_zulu_whisky
 ```
 
 ###### Get all code words
@@ -86,3 +80,17 @@ console.log( codeWords.capitalized )
 // ]
 ```
 
+###### Get all letters
+```javascript
+import { letters } from 'nato-phonetic-alphabet'
+
+console.log( letters.uppercase )
+// [
+//     'A', 'B', 'C', 'D', 'E', 'F',
+//     'G', 'H', 'I', 'J', 'K', 'L',
+//     'M', 'N', 'O', 'P', 'Q', 'R',
+//     'S', 'T', 'U', 'V', 'W', 'X',
+//     'Y', 'Z'
+// ]
+
+```
