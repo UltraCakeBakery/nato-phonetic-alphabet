@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: 16
       - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.23.3
       - run: pnpm install
       - run: pnpm build
       - run: npm publish
@@ -32,6 +34,8 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.23.3
       - run: pnpm install
       - run: pnpm build
       - run: npm publish
@@ -51,6 +55,8 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
       - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.23.3
       - run: pnpm install
       - run: pnpm build
       - run: npm publish
