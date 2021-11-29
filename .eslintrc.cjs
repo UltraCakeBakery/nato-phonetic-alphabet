@@ -1,5 +1,6 @@
 module.exports = {
 	root: true,
+	plugins: [ 'jest' ],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2021
@@ -60,7 +61,8 @@ module.exports = {
 	},
 	env: {
 		es6: true,
-		node: true
+		node: true,
+		jest: true
 	},
 	extends: [
 		'eslint:recommended',
