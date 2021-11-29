@@ -22,17 +22,17 @@ _letters.forEach( ( letter, index ) =>
 	alphabet[letter.toLowerCase()] = _codeWords[index].toLowerCase()
 })
 
-export function convert( text: string, mode: ConversionMode = ConversionMode.CAPITALIZED, afterCodeword = '' ) : string
+export function convert( text: string, mode: ConversionMode = ConversionMode.CAPITALIZED, divider = '' ) : string
 {	
 	if ( mode === ConversionMode.UPPERCASE ) 
 	{
 		return [ ...text ].map( character => 
 		{
-			if ( letters.lowercase.includes( character ) ) return codewords.uppercase[letters.lowercase.indexOf( character )] + afterCodeword
-			if ( letters.uppercase.includes( character ) ) return codewords.uppercase[letters.uppercase.indexOf( character )] + afterCodeword
+			if ( letters.lowercase.includes( character ) ) return codewords.uppercase[letters.lowercase.indexOf( character )]
+			if ( letters.uppercase.includes( character ) ) return codewords.uppercase[letters.uppercase.indexOf( character )]
 
 			return character
-		}).join( '' )
+		}).join( divider )
 	}
 
 	if ( mode === ConversionMode.LOWERCASE ) 
@@ -40,23 +40,23 @@ export function convert( text: string, mode: ConversionMode = ConversionMode.CAP
 		return [ ...text ].map( character => 
 		{
 
-			if ( letters.lowercase.includes( character ) ) return codewords.lowercase[letters.lowercase.indexOf( character )] + afterCodeword
-			if ( letters.uppercase.includes( character ) ) return codewords.lowercase[letters.uppercase.indexOf( character )] + afterCodeword
+			if ( letters.lowercase.includes( character ) ) return codewords.lowercase[letters.lowercase.indexOf( character )]
+			if ( letters.uppercase.includes( character ) ) return codewords.lowercase[letters.uppercase.indexOf( character )]
 
 			return character
-		}).join( '' )
+		}).join( divider )
 	}
 
 	
 	return [ ...text ].map( 
 		character =>
 		{
-			if ( letters.lowercase.includes( character ) ) return codewords.lowercase[letters.lowercase.indexOf( character )] + afterCodeword
-			if ( letters.uppercase.includes( character ) ) return codewords.capitalized[letters.uppercase.indexOf( character )] + afterCodeword
+			if ( letters.lowercase.includes( character ) ) return codewords.lowercase[letters.lowercase.indexOf( character )]
+			if ( letters.uppercase.includes( character ) ) return codewords.capitalized[letters.uppercase.indexOf( character )]
 
 			return character
 		}
-	).join( '' )
+	).join( divider )
 }
 
 /** Generates a string that counts up alphabetically using the phonetic alphabet. 
