@@ -17,7 +17,7 @@ pnpm install nato-phonetic-alphabet # if you are using pnpm
 
 ###### CDN
 Simply copy and paste this script tag into the `<head>` of your webpage.
-Make sure to change the version from `@latest` to a fixed version like `@1.5.0`, to prevent unexpected bugs from occurring after we release a new version of nato-phonetic-alphabet. 
+Make sure to change the version from `@latest` to a fixed version like `@2.0.0`, to prevent unexpected bugs from occurring after we release a new version of nato-phonetic-alphabet. 
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/nato-phonetic-alphabet@latest"/>
