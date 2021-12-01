@@ -20,7 +20,7 @@ module.exports = {
 		curly: [ 'error', 'multi-line' ],
 		'eol-last': 'error',
 		'import/no-unresolved': 'error',
-		'no-unused-vars': 'error',
+		'no-unused-vars': 'off',
 		'no-mixed-spaces-and-tabs': 'error',
 		'no-cond-assign': 'error',
 		'no-class-assign': 'error',

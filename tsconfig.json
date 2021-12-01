@@ -10,9 +10,7 @@
     "resolveJsonModule": true,
     "skipDefaultLibCheck": true,
     "paths": {
-		"just-html": ["./packages/just-html/src/index.ts"],
-		"@just-html/express-middleware": ["./packages/express-middleware/src/index.ts"],
-		"@just-html/runtime": ["./packages/runtime/src/index.ts"]
+		
     },
 	"sourceMap": true
   },

@@ -1,60 +1,66 @@
 {
-  "name": "nato-phonetic-alphabet",
-  "version": "1.5.0",
-  "description": "This tiny npm package contains the full NATO phonetic alphabet (present \"International aviation\" variant), a basic string converter and placeholder generator.",
-  "keywords": [
-    "Converter",
-    "NATO",
-    "Alpha",
-    "Beta",
-    "List",
-    "JSON",
-    "aviation",
-    "Alphabet"
-  ],
-  "author": "Jack van der Bilt <contact@managing.software> (https://managing.software)",
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "dev": "tsup --watch src",
-    "build": "tsup",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix --ext .js,.cjs,.ts .",
-    "test": "jest --coverage"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/UltraCakeBakery/nato-phonetic-alphabet.git"
-  },
-  "bugs": {
-    "url": "https://github.com/UltraCakeBakery/nato-phonetic-alphabet/issues"
-  },
-  "homepage": "https://github.com/UltraCakeBakery/nato-phonetic-alphabet#readme",
-  "devDependencies": {
-    "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.10",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "eslint": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.3.0",
-    "jest": "^27.4.0",
-    "nato-phonetic-alphabet": "^1.4.1",
-    "ts-jest": "^27.0.7",
-    "tsup": "^5.10.0",
-    "typescript": "^4.5.2"
-  }
+	"name": "nato-phonetic-alphabet",
+	"version": "1.5.0",
+	"description": "This tiny npm package contains the full NATO phonetic alphabet (present \"International aviation\" variant), a basic string converter and placeholder generator.",
+	"keywords": [
+		"Converter",
+		"NATO",
+		"Alfa",
+		"Alpha",
+		"Bravo",
+		"Beta",
+		"List",
+		"JSON",
+		"Aviation",
+		"Alphabet"
+	],
+	"author": "Jack van der Bilt <contact@managing.software> (https://managing.software)",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"devDependencies": {
+		"@types/jest": "^27.0.3",
+		"@types/node": "^16.11.11",
+		"@typescript-eslint/eslint-plugin": "^5.5.0",
+		"@typescript-eslint/parser": "^5.5.0",
+		"eslint": "^8.3.0",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-jest": "^25.3.0",
+		"jest": "^27.4.2",
+		"nato-phonetic-alphabet": "^1.5.0",
+		"ts-jest": "^27.0.7",
+		"tsup": "^5.10.0",
+		"typescript": "^4.5.2"
+	},
+	"scripts": {
+		"dev": "tsup --watch src",
+		"build": "tsup",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix --ext .js,.cjs,.ts .",
+		"test": "jest --coverage --runInBand"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/UltraCakeBakery/nato-phonetic-alphabet.git"
+	},
+	"bugs": {
+		"url": "https://github.com/UltraCakeBakery/nato-phonetic-alphabet/issues"
+	},
+	"homepage": "https://github.com/UltraCakeBakery/nato-phonetic-alphabet#readme",
+	"funding": {
+		"type": "patreon",
+		"url": "https://www.patreon.com/jackvanderbilt"
+	}
 }
