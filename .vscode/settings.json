@@ -4,7 +4,7 @@
 		"**/CODE_OF_CONDUCT.md": true,
 		"**/LICENSE": true,
 		".eslintrc.cjs": true,
-		// ".gitignore": true,
+		".gitignore": true,
 	},
 	"files.insertFinalNewline": true,
 	"editor.tabSize": 4,
