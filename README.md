@@ -1,19 +1,29 @@
 # nato-phonetic-alphabet &middot; [![GitHub license](https://img.shields.io/github/license/UltraCakeBakery/nato-phonetic-alphabet.svg?style=flat-square)](#LICENSE) [![npm version](https://img.shields.io/codecov/c/github/ultracakebakery/nato-phonetic-alphabet?style=flat-square)](https://www.npmjs.com/package/nato-phonetic-alphabet) ![npm](https://img.shields.io/bundlephobia/min/nato-phonetic-alphabet?style=flat-square)
 
 This tiny npm package contains the full NATO phonetic alphabet (present "International aviation" variant). 
-It also comes with a handy [`convert()`](#examples) and [`placeholder()`]() function.
+It also comes with a handy [`convert()`](#how-to-use-convert) and [`placeholder()`](#how-to-use-placeholder) function.
 
 Learn more about [the NATO phonetic alphabet (International Aviation)](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#International_aviation)
 
 ## How to install
-You can install this package like any other npm package.
+###### NPM
+You can install this package like any other npm package:
 
 ```bash
-npm install nato-phonetic-alphabet
-yarn add nato-phonetic-alphabet
-pnpm install nato-phonetic-alphabet
+npm install nato-phonetic-alphabet # if you are using npm
+yarn add nato-phonetic-alphabet # if you are using yarn
+pnpm install nato-phonetic-alphabet # if you are using pnpm
 ```
 
+###### CDN
+Simply copy and paste this script tag into the `<head>` of your webpage.
+Make sure to change the version from `@latest` to a fixed version like `@1.5.0`, to prevent unexpected bugs from occurring after we release a new version of nato-phonetic-alphabet. 
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/nato-phonetic-alphabet@latest"/>
+````
+> Note: The link is provided by jsdelivr.net - a free for open source CDN. <br>
+> We do **not** guarantee that this link will work indefinitely.
 
 ## Examples:
 
@@ -36,8 +46,8 @@ console.log( NatoPhoneticAlphabet['c'] ) // charlie
 ```javascript
 import { convert } from 'nato-phonetic-alphabet'
 
-console.log( convert( 'a b c d', 0 ) ) // ALFA BRAVO CHARLIE DELTA
-console.log( convert( 'a b c d', 1 ) ) // alfa bravo charlie delta
+console.log( convert( 'a b c d', 0 ) ) // alfa bravo charlie delta
+console.log( convert( 'a b c d', 1 ) ) // ALFA BRAVO CHARLIE DELTA
 console.log( convert( 'A B c d', 2 ) ) // ALFA BRAVO charlie delta
 
 // Using `divider` option
