@@ -4,7 +4,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! Plenty of issues are to be expected since `nato-phonetic-alphabet` has not yet reached version `1.0`.
+        Thanks for taking the time to fill out this bug report!
   - type: textarea
     id: bug-description
     attributes:
@@ -17,7 +17,7 @@ body:
     id: reproduction
     attributes:
       label: Reproduction
-      description: A link to a repository that reproduces the issue. Explaining how to reproduce is generally not enough. It pushes the burden of creating a reproduction project onto the maintainers, who as of this moment do not yet receive enough funding to work on nato-phonetic-alphabet fulltime. If no reproduction is provided within a reasonable time-frame, the issue will be closed.
+      description: A link to a repository that reproduces the issue. If none is provided it pushes the burden of creating a reproduction project onto the maintainers, which will make it take a longer time for the bug to get resolved.
       placeholder: Reproduction
     validations:
       required: true
