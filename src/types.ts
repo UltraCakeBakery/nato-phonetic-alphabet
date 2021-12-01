@@ -16,9 +16,8 @@ export interface CodeWords {
 	capitalized: Letter[]
 }
 
-
 export enum ConversionMode {
-	UPPERCASE,
 	LOWERCASE,
+	UPPERCASE,
 	CAPITALIZED,
 }

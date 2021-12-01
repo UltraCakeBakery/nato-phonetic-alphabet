@@ -24,31 +24,18 @@ _letters.forEach( ( letter, index ) =>
 
 export function convert( text: string, mode: ConversionMode = ConversionMode.CAPITALIZED, divider = '' ) : string
 {	
-	if ( mode === ConversionMode.UPPERCASE ) 
-	{
-		return [ ...text ].map( character => 
-		{
-			if ( letters.lowercase.includes( character ) ) return codewords.uppercase[letters.lowercase.indexOf( character )]
-			if ( letters.uppercase.includes( character ) ) return codewords.uppercase[letters.uppercase.indexOf( character )]
-
-			return character
-		}).join( divider )
-	}
-
+	const characters = [ ...text ]
 	if ( mode === ConversionMode.LOWERCASE ) 
 	{
-		return [ ...text ].map( character => 
-		{
-
-			if ( letters.lowercase.includes( character ) ) return codewords.lowercase[letters.lowercase.indexOf( character )]
-			if ( letters.uppercase.includes( character ) ) return codewords.lowercase[letters.uppercase.indexOf( character )]
-
-			return character
-		}).join( divider )
+		return characters.map( character => codewords.lowercase[letters.lowercase.indexOf( character.toLowerCase() )] || character ).join( divider )
 	}
 
+	if ( mode === ConversionMode.UPPERCASE ) 
+	{
+		return characters.map( character => codewords.uppercase[letters.uppercase.indexOf( character.toUpperCase() )] || character ).join( divider )
+	}
 	
-	return [ ...text ].map( 
+	return characters.map(
 		character =>
 		{
 			if ( letters.lowercase.includes( character ) ) return codewords.lowercase[letters.lowercase.indexOf( character )]
@@ -59,18 +46,18 @@ export function convert( text: string, mode: ConversionMode = ConversionMode.CAP
 	).join( divider )
 }
 
-/** Generates a string that counts up alphabetically using the phonetic alphabet. 
- * Can be used to generate html element class names, github repository names or anything that needs to look temporary and robust. 
- * */
+/** 
+ * Generates a string that counts up alphabetically using the phonetic alphabet. 
+ * These strings could be used to generate html element class names, github repository names or anything that needs to look temporary and robust. 
+ */
 export function placeholder( number: number, divider: string = '-' ) : string
 {
 	const placeholder = []
 	const major = Math.floor( number / codewords.lowercase.length )
-	const minor = number - codewords.lowercase.length * major
 
 	for ( let index = 0; index < major; index++ ) placeholder.push( codewords.lowercase[ codewords.lowercase.length - 1] )
 
-	placeholder.push( codewords.lowercase[ minor ] )
+	placeholder.push( codewords.lowercase[ number - codewords.lowercase.length * major ] )
 
 	return placeholder.join( divider )
 }
