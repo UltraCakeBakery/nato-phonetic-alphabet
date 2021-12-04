@@ -5,6 +5,8 @@ It also comes with a handy [`convert()`](#how-to-use-convert) and [`placeholder(
 
 Learn more about [the NATO phonetic alphabet (International Aviation)](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#International_aviation)
 
+Read the [how to install]() section for 
+
 ## How to install
 ###### NPM
 You can install this package like any other npm package:
@@ -22,8 +24,7 @@ Make sure to change the version from `@latest` to a fixed version like `@2.0.0`,
 ```html
 <script src="https://cdn.jsdelivr.net/npm/nato-phonetic-alphabet@latest"/>
 ````
-> Note: The link is provided by jsdelivr.net - a free for open source CDN. <br>
-> We do **not** guarantee that this link will work indefinitely.
+> Note: The link is provided by [jsDelivr - A free, fast, and reliable CDN for open source](https://www.jsdelivr.com/). Please read their [term and conditions](https://www.jsdelivr.com/terms) before you start using this link in production.
 
 ## Examples:
 
