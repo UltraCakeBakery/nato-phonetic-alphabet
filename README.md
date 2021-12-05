@@ -5,7 +5,6 @@ It also comes with a handy [`convert()`](#how-to-use-convert) and [`placeholder(
 
 Learn more about [the NATO phonetic alphabet (International Aviation)](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#International_aviation)
 
-Read the [how to install]() section for 
 
 ## How to install
 ###### NPM
@@ -13,13 +12,13 @@ You can install this package like any other npm package:
 
 ```bash
 npm install nato-phonetic-alphabet # if you are using npm
-yarn add nato-phonetic-alphabet # if you are using yarn
 pnpm install nato-phonetic-alphabet # if you are using pnpm
+yarn add nato-phonetic-alphabet # if you are using yarn
 ```
 
-###### CDN
+###### CDN (alternative)
 Simply copy and paste this script tag into the `<head>` of your webpage.
-Make sure to change the version from `@latest` to a fixed version like `@2.0.0`, to prevent unexpected bugs from occurring after we release a new version of nato-phonetic-alphabet. 
+Make sure to change the version from `@latest` to a fixed version like `@2.0.4`, to prevent unexpected bugs from occurring whenever we release a new version of nato-phonetic-alphabet. 
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/nato-phonetic-alphabet@latest"/>
