@@ -52,7 +52,7 @@ console.log( convert( 'A B c d', 2 ) ) // ALFA BRAVO charlie delta
 
 // Using `divider` option
 console.log( convert( 'abcd', 0, '-' ) ) // alfa-bravo-charlie-delta
-console.log( convert( 'abcd', 1, '-' ) ) // alfa-bravo-charlie-delta
+console.log( convert( 'abcd', 1, '-' ) ) // ALFA-BRAVO-CHARLIE-DELTA
 console.log( convert( 'ABcd', 2, '-' ) ) // ALFA-BRAVO-charlie-delta 
 
 console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Hotel echo lima lima oscar   Whisky oscar romeo lima delta !   India   < 3   yankee oscar uniform !
