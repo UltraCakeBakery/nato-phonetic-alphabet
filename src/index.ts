@@ -1,45 +1,50 @@
-import _letters from './letters'
-import _codeWords from './codeWords'
-import type { Letters, CodeWords, Alphabet } from './types'
-import { ConversionMode } from './types'
+import _letters, { lowercase as lettersLowercase, uppercase as lettersUppercase } from './letters'
+import _codewords, { lowercase as codewordsLowercase, uppercase as codewordsUppercase, capitalized as codewordsCapitalized } from './codewords'
 
-export const letters: Letters = {
-	lowercase: _letters.map( letter => letter.toLowerCase() ),
-	uppercase: _letters.map( letter => letter.toUpperCase() )
-}
+// CAPITALIZED is last because of backwards compatibility with people who migrate from ^2.0.4
+export enum ConversionMode { LOWERCASE, UPPERCASE, AUTO_CAPITALIZED, CAPITALIZED, AUTO }
+export const letters = _letters
+export const codewords = _codewords
 
-export const codewords: CodeWords = {
-	lowercase: _codeWords.map( codeword => codeword.toLowerCase() ),
-	uppercase: _codeWords.map( codeword => codeword.toUpperCase() ),
-	capitalized: _codeWords.map( codeword => codeword[0].toUpperCase() + codeword.slice( 1 ) )
-}
+const alphabet : { [key: string]: string } = {}
 
-const alphabet : Alphabet = {}
-
-_letters.forEach( ( letter, index ) =>
+lettersLowercase.forEach( ( letter, index ) =>
 {
-	alphabet[letter] = _codeWords[index]
-	alphabet[letter.toLowerCase()] = _codeWords[index].toLowerCase()
+	alphabet[letter] = codewordsLowercase[index]
+	alphabet[letter.toUpperCase()] = lettersUppercase[index].toLowerCase()
 })
 
-export function convert( text: string, mode: ConversionMode = ConversionMode.CAPITALIZED, divider = '' ) : string
+export function convert( text: string, mode: ConversionMode = ConversionMode.AUTO_CAPITALIZED, divider = '' ) : string
 {	
 	const characters = [ ...text ]
-	if ( mode === ConversionMode.LOWERCASE ) 
-	{
-		return characters.map( character => codewords.lowercase[letters.lowercase.indexOf( character.toLowerCase() )] || character ).join( divider )
-	}
 
-	if ( mode === ConversionMode.UPPERCASE ) 
+	if ( mode === ConversionMode.LOWERCASE ) return characters.map( character => codewordsLowercase[lettersLowercase.indexOf( character.toLowerCase() )] || character ).join( divider )
+	if ( mode === ConversionMode.UPPERCASE ) return characters.map( character => codewordsUppercase[lettersUppercase.indexOf( character.toUpperCase() )] || character ).join( divider )
+	if ( mode === ConversionMode.CAPITALIZED ) return characters.map( character => codewordsCapitalized[lettersLowercase.indexOf( character )] || codewordsCapitalized[lettersUppercase.indexOf( character )] || character ).join( divider )	
+	if ( mode === ConversionMode.AUTO )
 	{
-		return characters.map( character => codewords.uppercase[letters.uppercase.indexOf( character.toUpperCase() )] || character ).join( divider )
+		return characters.map(
+			character =>
+			{
+				const lowercaseCharacterIndex = lettersLowercase.indexOf( character )
+				if ( lowercaseCharacterIndex !== -1 ) return codewordsLowercase[lowercaseCharacterIndex]
+				
+				const uppercaseCharacterIndex = lettersUppercase.indexOf( character )
+				if ( uppercaseCharacterIndex !== -1 ) return codewordsUppercase[uppercaseCharacterIndex]
+	
+				return character
+			}
+		).join( divider )
 	}
 	
 	return characters.map(
 		character =>
 		{
-			if ( letters.lowercase.includes( character ) ) return codewords.lowercase[letters.lowercase.indexOf( character )]
-			if ( letters.uppercase.includes( character ) ) return codewords.capitalized[letters.uppercase.indexOf( character )]
+			const lowercaseCharacterIndex = lettersLowercase.indexOf( character )
+			if ( lowercaseCharacterIndex !== -1 ) return codewordsLowercase[lowercaseCharacterIndex]
+			
+			const uppercaseCharacterIndex = lettersUppercase.indexOf( character )
+			if ( uppercaseCharacterIndex !== -1 ) return codewordsCapitalized[uppercaseCharacterIndex]
 
 			return character
 		}

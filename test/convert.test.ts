@@ -1,27 +1,37 @@
-/* eslint-disable no-useless-escape */
-import { convert } from '../src/index'
+import { ConversionMode, convert } from '../src/index'
 
 test( 'convert', () => 
 {
+	// defaults
 	expect( convert( 'abc' ) ).toBe( 'alfabravocharlie' )
-
-	expect( convert( 'abc', 0 ) ).toBe( 'alfabravocharlie' )
-	expect( convert( 'ABC', 0 ) ).toBe( 'alfabravocharlie' )
-
-	expect( convert( 'abc', 1 ) ).toBe( 'ALFABRAVOCHARLIE' )
-	expect( convert( 'ABC', 1 ) ).toBe( 'ALFABRAVOCHARLIE' )
-
-	expect( convert( 'AbC', 2 ) ).toBe( 'AlfabravoCharlie' )
-
-	expect( convert( '_@\"', 0 ) ).toBe( '_@\"' )
-	expect( convert( '_@\"', 1 ) ).toBe( '_@\"' )
-	expect( convert( '_@\"', 2 ) ).toBe( '_@\"' )
-
-	expect( convert( 'abc', 0, '_' ) ).toBe( 'alfa_bravo_charlie' )
-	expect( convert( 'abc', 1, '_' ) ).toBe( 'ALFA_BRAVO_CHARLIE' )
-	expect( convert( 'AbC', 2, '_' ) ).toBe( 'Alfa_bravo_Charlie' )
-
 	expect( convert( 'a b c' ) ).toBe( 'alfa bravo charlie' )
 	expect( convert( 'A B c d' ) ).toBe( 'Alfa Bravo charlie delta' )
-	expect( convert( 'abc' ) ).toBe( 'alfabravocharlie' )
+
+	expect( convert( 'abc', ConversionMode.LOWERCASE ) ).toBe( 'alfabravocharlie' )
+	expect( convert( 'ABC', ConversionMode.LOWERCASE ) ).toBe( 'alfabravocharlie' )
+	expect( convert( 'ABC', ConversionMode.LOWERCASE, '-' ) ).toBe( 'alfa-bravo-charlie' )
+	
+	expect( convert( 'abc', ConversionMode.UPPERCASE ) ).toBe( 'ALFABRAVOCHARLIE' )
+	expect( convert( 'ABC', ConversionMode.UPPERCASE ) ).toBe( 'ALFABRAVOCHARLIE' )
+	expect( convert( 'ABC', ConversionMode.UPPERCASE, '-' ) ).toBe( 'ALFA-BRAVO-CHARLIE' )
+	
+	expect( convert( 'abCD', ConversionMode.CAPITALIZED ) ).toBe( 'AlfaBravoCharlieDelta' )
+	expect( convert( 'ABcd', ConversionMode.CAPITALIZED ) ).toBe( 'AlfaBravoCharlieDelta' )
+	expect( convert( 'ABCD', ConversionMode.CAPITALIZED, '-' ) ).toBe( 'Alfa-Bravo-Charlie-Delta' )
+
+	expect( convert( 'abCD', ConversionMode.AUTO_CAPITALIZED ) ).toBe( 'alfabravoCharlieDelta' )
+	expect( convert( 'ABcd', ConversionMode.AUTO_CAPITALIZED ) ).toBe( 'AlfaBravocharliedelta' )
+	expect( convert( 'abCD', ConversionMode.AUTO_CAPITALIZED, '-' ) ).toBe( 'alfa-bravo-Charlie-Delta' )
+	expect( convert( 'ABcd', ConversionMode.AUTO_CAPITALIZED, '-' ) ).toBe( 'Alfa-Bravo-charlie-delta' )
+	
+	expect( convert( 'abCD', ConversionMode.AUTO ) ).toBe( 'alfabravoCHARLIEDELTA' )
+	expect( convert( 'ABcd', ConversionMode.AUTO ) ).toBe( 'ALFABRAVOcharliedelta' )
+	expect( convert( 'abCD', ConversionMode.AUTO, '-' ) ).toBe( 'alfa-bravo-CHARLIE-DELTA' )
+	expect( convert( 'ABcd', ConversionMode.AUTO, '-' ) ).toBe( 'ALFA-BRAVO-charlie-delta' )
+
+	expect( convert( '_@\\"', ConversionMode.LOWERCASE ) ).toBe( '_@\\"' )
+	expect( convert( '_@\\"', ConversionMode.UPPERCASE ) ).toBe( '_@\\"' )
+	expect( convert( '_@\\"', ConversionMode.CAPITALIZED ) ).toBe( '_@\\"' )
+	expect( convert( '_@\\"', ConversionMode.AUTO_CAPITALIZED ) ).toBe( '_@\\"' )
+	expect( convert( '_@\\"', 4 ) ).toBe( '_@\\"' )
 })
