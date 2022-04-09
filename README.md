@@ -22,7 +22,8 @@ Make sure to change the version from `@latest` to a fixed version like `@2.0.4`,
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/nato-phonetic-alphabet@latest"/>
-````
+```
+
 > Note: The link is provided by [jsDelivr - A free, fast, and reliable CDN for open source](https://www.jsdelivr.com/). Please read their [term and conditions](https://www.jsdelivr.com/terms) before you start using this link in production.
 
 ## Examples:
@@ -46,14 +47,18 @@ console.log( NatoPhoneticAlphabet['c'] ) // charlie
 ```javascript
 import { convert } from 'nato-phonetic-alphabet'
 
-console.log( convert( 'a b c d', 0 ) ) // alfa bravo charlie delta
-console.log( convert( 'a b c d', 1 ) ) // ALFA BRAVO CHARLIE DELTA
-console.log( convert( 'A B c d', 2 ) ) // ALFA BRAVO charlie delta
+console.log( convert( 'a b c d', ConversionMode.LOWERCASE ) ) // alfa bravo charlie delta
+console.log( convert( 'a b c d', ConversionMode.UPPERCASE ) ) // ALFA BRAVO CHARLIE DELTA
+console.log( convert( 'A B c d', ConversionMode.CAPITALIZED ) ) // Alfa Bravo Charlie Delta
+console.log( convert( 'A B c d', ConversionMode.AUTO ) ) // ALFA BRAVO charlie delta
+console.log( convert( 'A B c d', ConversionMode.AUTO_CAPITALIZED ) ) // Alfa Bravo charlie delta
 
-// Using `divider` option
-console.log( convert( 'abcd', 0, '-' ) ) // alfa-bravo-charlie-delta
-console.log( convert( 'abcd', 1, '-' ) ) // ALFA-BRAVO-CHARLIE-DELTA
-console.log( convert( 'ABcd', 2, '-' ) ) // ALFA-BRAVO-charlie-delta 
+// Using `seperator` option
+console.log( convert( 'abcd', ConversionMode.LOWERCASE, '-' ) ) // alfa-bravo-charlie-delta
+console.log( convert( 'abcd', ConversionMode.UPPERCASE, '-' ) ) // ALFA-BRAVO-CHARLIE-DELTA
+console.log( convert( 'ABcd', ConversionMode.CAPITALIZED, '-' ) ) // Alfa-Bravo-Charlie-Delta 
+console.log( convert( 'ABcd', ConversionMode.AUTO, '-' ) ) // ALFA-BRAVO-charlie-delta 
+console.log( convert( 'ABcd', ConversionMode.AUTO_CAPITALIZED, '-' ) ) // ALFA-BRAVO-Charlie-Delta 
 
 console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Hotel echo lima lima oscar   Whisky oscar romeo lima delta !   India   < 3   yankee oscar uniform !
 ```
