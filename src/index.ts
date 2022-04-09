@@ -11,7 +11,7 @@ const alphabet : { [key: string]: string } = {}
 lettersLowercase.forEach( ( letter, index ) =>
 {
 	alphabet[letter] = codewordsLowercase[index]
-	alphabet[letter.toUpperCase()] = lettersUppercase[index].toLowerCase()
+	alphabet[letter.toUpperCase()] = codewordsUppercase[index]
 })
 
 export function convert( text: string, mode: ConversionMode = ConversionMode.AUTO_CAPITALIZED, divider = '' ) : string
