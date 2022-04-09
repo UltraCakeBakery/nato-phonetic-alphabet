@@ -27,14 +27,6 @@ body:
       label: Logs
       description: "Please include any console logs around the time this bug occurred. Please try not to take a screenshot but copy paste the log text."
       render: shell
-  - type: textarea
-    id: system-info
-    attributes:
-      label: System Info
-      description: Output of `npx envinfo --system --binaries --browsers --npmPackages "{nato-phonetic-alphabet/*}"`
-      render: shell
-    validations:
-      required: true
   - type: dropdown
     id: severity
     attributes:
