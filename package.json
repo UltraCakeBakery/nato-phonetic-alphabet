@@ -49,7 +49,8 @@
 		"build": "tsup",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix --ext .js,.cjs,.ts .",
-		"test": "jest --coverage --runInBand"
+		"test": "jest --coverage --runInBand",
+		"bench": "node ./benchmark/index.js"
 	},
 	"repository": {
 		"type": "git",
