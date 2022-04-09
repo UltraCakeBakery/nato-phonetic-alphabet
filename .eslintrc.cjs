@@ -3,10 +3,9 @@ module.exports = {
 	plugins: [ 'jest' ],
 	parserOptions: {
 		sourceType: 'module',
-		ecmaVersion: 2021
+		ecmaVersion: 2022
 	},
 	rules: {
-		'max-len': [ 'error', { code: 250 }],
 		'arrow-spacing': [ 'error', { before: true, after: true }],
 		indent: [ 'error', 'tab' ],
 		'brace-style': [ 'error', 'allman' ],
