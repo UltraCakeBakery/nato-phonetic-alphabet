@@ -1,7 +1,5 @@
 {
 	"recommendations": [
-		"dbaeumer.vscode-eslint",
-		"mrmlnc.vscode-duplicate",
-		"aaron-bond.better-comments"
+		"dbaeumer.vscode-eslint"
 	]
 }
