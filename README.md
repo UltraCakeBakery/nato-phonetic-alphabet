@@ -32,15 +32,15 @@ Make sure to change the version from `@latest` to a fixed version like `@2.0.4`,
 ```javascript
 import NatoPhoneticAlphabet from 'nato-phonetic-alphabet'
 
-/* uppercase */
-console.log( NatoPhoneticAlphabet['A'] ) // Alfa
-console.log( NatoPhoneticAlphabet['B'] ) // Bravo
-console.log( NatoPhoneticAlphabet['C'] ) // Charlie
-
 /* lowercase */
 console.log( NatoPhoneticAlphabet['a'] ) // alfa
 console.log( NatoPhoneticAlphabet['b'] ) // bravo
 console.log( NatoPhoneticAlphabet['c'] ) // charlie
+
+/* uppercase */
+console.log( NatoPhoneticAlphabet['A'] ) // ALFA
+console.log( NatoPhoneticAlphabet['B'] ) // BRAVO
+console.log( NatoPhoneticAlphabet['C'] ) // CHARLIE
 ```
 
 ###### how to use `convert()`
