@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "module": "ES2022",
-    "lib": ["ES2021"],
+  "target": "es2022",
+  "module": "es2022",
+  "lib": ["ES2022"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipDefaultLibCheck": true,
-    "paths": {
-		
-    },
-	"sourceMap": true
+  	"sourceMap": true,
+    "types": ["node", "vitest"]
   },
   "exclude": [ "**/dist/**", "**/node_modules/**" ]
 }

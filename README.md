@@ -1,7 +1,12 @@
 # nato-phonetic-alphabet &middot; [![GitHub license](https://img.shields.io/github/license/UltraCakeBakery/nato-phonetic-alphabet.svg?style=flat-square)](#LICENSE) [![npm version](https://img.shields.io/codecov/c/github/ultracakebakery/nato-phonetic-alphabet?style=flat-square)](https://www.npmjs.com/package/nato-phonetic-alphabet) ![npm](https://img.shields.io/bundlephobia/min/nato-phonetic-alphabet?style=flat-square)
 
-This tiny npm package contains the full NATO phonetic alphabet (present "International aviation" variant). 
-It also comes with a handy [`convert()`](#how-to-use-convert) and [`placeholder()`](#how-to-use-placeholder) function.
+This tiny npm package contains the full NATO phonetic alphabet (present "International aviation" variant).
+It provides a small, efficient API:
+
+- `toPhonetic(text, mode?, divider?)` — convert text to phonetic codewords (positional arguments)
+- `placeholder(n, mode?, divider?)` — deterministic placeholder for numbers (supports negative wrapping)
+- `getAlphabet()` — mapping from characters to codewords
+- `LETTERS` and `CODEWORDS` constants
 
 Learn more about [the NATO phonetic alphabet (International Aviation)](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#International_aviation)
 
@@ -43,69 +48,46 @@ console.log( NatoPhoneticAlphabet['B'] ) // BRAVO
 console.log( NatoPhoneticAlphabet['C'] ) // CHARLIE
 ```
 
-###### how to use `convert()`
+###### How to use `toPhonetic()`
 ```javascript
-import { convert } from 'nato-phonetic-alphabet'
+import { toPhonetic } from 'nato-phonetic-alphabet'
 
-console.log( convert( 'a b c d', ConversionMode.LOWERCASE ) ) // alfa bravo charlie delta
-console.log( convert( 'a b c d', ConversionMode.UPPERCASE ) ) // ALFA BRAVO CHARLIE DELTA
-console.log( convert( 'A B c d', ConversionMode.CAPITALIZED ) ) // Alfa Bravo Charlie Delta
-console.log( convert( 'A B c d', ConversionMode.AUTO ) ) // ALFA BRAVO charlie delta
-console.log( convert( 'A B c d', ConversionMode.AUTO_CAPITALIZED ) ) // Alfa Bravo charlie delta
+// defaults: positional API, default divider is a single space
+console.log(toPhonetic('abc')) // 'alfa bravo charlie'
+console.log(toPhonetic('a b c')) // 'alfa bravo charlie' // preserved spacing
 
-// Using `seperator` option
-console.log( convert( 'abcd', ConversionMode.LOWERCASE, '-' ) ) // alfa-bravo-charlie-delta
-console.log( convert( 'abcd', ConversionMode.UPPERCASE, '-' ) ) // ALFA-BRAVO-CHARLIE-DELTA
-console.log( convert( 'ABcd', ConversionMode.CAPITALIZED, '-' ) ) // Alfa-Bravo-Charlie-Delta 
-console.log( convert( 'ABcd', ConversionMode.AUTO, '-' ) ) // ALFA-BRAVO-charlie-delta 
-console.log( convert( 'ABcd', ConversionMode.AUTO_CAPITALIZED, '-' ) ) // ALFA-BRAVO-Charlie-Delta 
-
-console.log( convert( 'Hello World! I <3 you!', 2, ' ' ) ) // Hotel echo lima lima oscar   Whisky oscar romeo lima delta !   India   < 3   yankee oscar uniform !
+// positional: toPhonetic(text, mode?, divider?)
+console.log(toPhonetic('abcd', 'lower', '-')) // 'alfa-bravo-charlie-delta'
+console.log(toPhonetic('ABcd', 'capitalized', '-')) // 'Alfa-Bravo-Charlie-Delta'
+console.log(toPhonetic('ABcd', 'auto', '-')) // 'ALFA-BRAVO-charlie-delta'
 ```
 
-###### how to use `placeholder()`
+###### How to use `placeholder()`
 ```javascript
 import { placeholder } from 'nato-phonetic-alphabet'
 
-console.log( placeholder( 0 ) ) // alpha
-console.log( placeholder( 1 ) ) // beta
-console.log( placeholder( 26 ) ) // zulu-alpha
-console.log( placeholder( 100 ) ) // zulu-zulu-zulu-whisky
-console.log( placeholder( 1000 ) ) // zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-zulu-mike
+console.log(placeholder(0)) // 'alfa'
+console.log(placeholder(1)) // 'bravo'
+console.log(placeholder(26)) // e.g. 'zulu-alfa'
+console.log(placeholder(100)) // 'zulu-zulu-zulu-whisky'
 
-// Using `divider` option
-console.log( placeholder( 100, '_' ) ) // zulu_zulu_zulu_whisky
+// negative numbers wrap (convenience behavior):
+console.log(placeholder(-1)) // 'zulu'
+
+// Using `divider` (positional)
+console.log(placeholder(100, undefined, '_')) // 'zulu_zulu_zulu_whisky'
 ```
 
 ###### Get all code words
 ```javascript
-import { codeWords } from 'nato-phonetic-alphabet'
+import { CODEWORDS } from 'nato-phonetic-alphabet'
 
-console.log( codeWords.capitalized )
-// [
-//   'Alfa',    'Bravo',    'Charlie',
-//   'Delta',   'Echo',     'Foxtrot',
-//   'Golf',    'Hotel',    'India',
-//   'Juliett', 'Kilo',     'Lima',
-//   'Mike',    'November', 'Oscar',
-//   'Papa',    'Quebec',   'Romeo',
-//   'Sierra',  'Tango',    'Uniform',
-//   'Victor',  'Whisky',   'X-ray',
-//   'Yankee',  'Zulu'
-// ]
+console.log(CODEWORDS)
 ```
 
 ###### Get all letters
 ```javascript
-import { letters } from 'nato-phonetic-alphabet'
+import { LETTERS } from 'nato-phonetic-alphabet'
 
-console.log( letters.uppercase )
-// [
-//     'A', 'B', 'C', 'D', 'E', 'F',
-//     'G', 'H', 'I', 'J', 'K', 'L',
-//     'M', 'N', 'O', 'P', 'Q', 'R',
-//     'S', 'T', 'U', 'V', 'W', 'X',
-//     'Y', 'Z'
-// ]
-
+console.log(LETTERS)
 ```
